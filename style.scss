@@ -1,7 +1,127 @@
+// variables
+$backgroundBody: linear-gradient(180deg, #B068E9 0%, #6463E7 100%); 
+
+// colorText
+@mixin question {
+    font-family: Kumbh Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 13px;
+    color: #4B4C5F;
+}
+
+@mixin answer {
+    font-family: Kumbh Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #787887; 
+    
+}
+@mixin questionhover {
+    font-family: Kumbh Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 13px;
+line-height: 13px;
+color: #1E1F36;
+    
+}
+
+// dividers
+$colorDividers: hsl(240, 5%, 91%);
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 12px;
+    
+    
+    
 
 }
+
+body{
+    
+    background: linear-gradient(180deg, #B068E9 0%, #6463E7 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-size: contain;
+    
+}
+
+.container{
+    margin-top: 15rem;
+    margin-bottom: 3rem;
+    background-color: white;
+    width: 300px;
+    height: 535px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.faq__image--woman{
+
+ background-image: url(/images/illustration-woman-online-mobile.svg);
+ background-size: cover;
+ width: 260px;
+ height: 180px;
+ position: absolute;
+ left: 45%;
+ bottom: 69%;
+ transform: translate(-50%,-50%);
+
+}
+
+.faq__image--womanBg{
+
+    background-image: url(/images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 52%;
+    bottom: 73%;
+    width: 260px;
+    height: 100px;
+}
+
+.faq{
+    padding-top: 10rem;
+    width: 280px;
+    
+    
+
+
+    .faq__h1{
+
+        font-family: Kumbh Sans;
+        font-size: 32px;
+        line-height: 32px;
+        color: #1E1F36;
+        text-align: center;
+        
+
+    }
+
+    .faq__textContainer{
+
+        .faq__textContainer--question{
+            @include question();
+        }
+        .faq__textContainer--question:hover{
+            @include questionhover();
+        }
+        .faq__textContainer--answer{
+            @include answer();
+        }
+
+    }
+
+
+}
+
