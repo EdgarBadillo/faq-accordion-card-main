@@ -1,5 +1,5 @@
 // variables
-$backgroundBody: linear-gradient(180deg, #B068E9 0%, #6463E7 100%); 
+
 
 // colorText
 @mixin question {
@@ -27,6 +27,7 @@ font-weight: bold;
 font-size: 13px;
 line-height: 13px;
 color: #1E1F36;
+cursor: pointer;
     
 }
 
@@ -44,28 +45,31 @@ $colorDividers: hsl(240, 5%, 91%);
 }
 
 body{
-    
-    background: linear-gradient(180deg, #B068E9 0%, #6463E7 100%);
+    min-height: 100vh;
+    background-image: linear-gradient(#B068E9,#6463E7);
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-size: contain;
+   
     
 }
 
 .container{
-    margin-top: 15rem;
+    margin-top: 8rem;
     margin-bottom: 3rem;
     background-color: white;
-    width: 300px;
+    width: 327px;
     height: 535px;
     position: relative;
     display: flex;
     justify-content: center;
+    border-radius: 23px;
+   
+    
     
 }
 
-.faq__image--woman{
+.card__image{
 
  background-image: url(/images/illustration-woman-online-mobile.svg);
  background-size: cover;
@@ -78,7 +82,7 @@ body{
 
 }
 
-.faq__image--womanBg{
+.card__imagebg{
 
     background-image: url(/images/bg-pattern-mobile.svg);
     background-repeat: no-repeat;
@@ -90,37 +94,82 @@ body{
     height: 100px;
 }
 
-.faq{
-    padding-top: 10rem;
+.card__text{
+    padding-top: 8rem;
     width: 280px;
-    
-    
+    font-family: Kumbh Sans;
+    min-height: 407px;
+    overflow: hidden;
 
-
-    .faq__h1{
-
-        font-family: Kumbh Sans;
-        font-size: 32px;
-        line-height: 32px;
+    h1{
         color: #1E1F36;
+        line-height: 32px;
         text-align: center;
+
+    }
+
+    .accordion{
+
+        border: none;
+        outline: none;
+        background-color: white;
+        @include question();
+        width: 279px;
+        height: 34px;
+        text-align: left;
+        margin-top: 1rem;
+       padding-bottom: 1rem;
+        border-bottom: $colorDividers solid 1px;
+        
+    }
+    .accordion::after{
+
+        content:url(/images/icon-arrow-down.svg);
+        
+        float: right;
         
 
     }
 
-    .faq__textContainer{
-
-        .faq__textContainer--question{
-            @include question();
-        }
-        .faq__textContainer--question:hover{
-            @include questionhover();
-        }
-        .faq__textContainer--answer{
-            @include answer();
-        }
+    .active{
+        font-weight: bold;
+        border: none;
 
     }
+
+    .accordion:hover{
+        
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .panel{
+
+        // padding-top: 1rem;
+        // padding-bottom: 1rem;
+        display: display;
+        overflow: hidden;
+        padding-bottom: 1rem;
+        border-bottom: $colorDividers solid 1px;
+        display: none;
+        
+
+        
+
+            p{
+                @include answer();
+
+            }
+    }
+
+
+    
+    
+
+
+    
+
+   
 
 
 }
