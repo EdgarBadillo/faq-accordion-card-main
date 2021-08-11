@@ -134,7 +134,14 @@ body{
     .active{
         font-weight: bold;
         border: none;
+        
 
+    }
+    .active::after{
+
+        content: url(/images/icon-arrow-down.svg);
+        float: right;
+        transform: rotate(180deg);
     }
 
     .accordion:hover{
