@@ -50,8 +50,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
    
     
+}
+
+.block{
+
+    display: none;
 }
 
 .container{
@@ -61,13 +68,14 @@ body{
     width: 327px;
     height: 535px;
     position: relative;
-    display: flex;
-    justify-content: center;
+     display: flex;
+     justify-content: center;
     border-radius: 23px;
    
     
     
 }
+
 
 .card__image{
 
@@ -152,8 +160,7 @@ body{
 
     .panel{
 
-        // padding-top: 1rem;
-        // padding-bottom: 1rem;
+        
         display: display;
         overflow: hidden;
         padding-bottom: 1rem;
@@ -169,15 +176,91 @@ body{
             }
     }
 
+}
 
+@media screen and (min-width: 920px){
+
+    .container{
+        
+        width: 920px;
+        height: 509px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        position: relative;
+        
+        
+    }
+    
+    .block{
+
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        transform: translateX(-248%) translateY(50%);
+    }
+    .images{
+
+
+        width: 427px;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        
+        .card__image{
+    
+            background-image: url(/images/illustration-woman-online-desktop.svg);
+            position: absolute;
+            width: 470px;
+            height: 359px;
+            top: 250px;
+            left: 150px;
+            
+            
+        }
+
+        .card__imagebg{
+
+            background-image: url(/images/bg-pattern-desktop.svg);
+            width: 900px;
+            height: 650px;
+            position: absolute;
+            top: 200px;
+            background-size: cover;
+            background-position: -290px;
+            
+        }
+
+       
+        
+    }
     
     
-
-
     
+    .card__text{
 
-   
+        padding-top: 5rem;
+        margin-right:6rem;
+
+
+        h1{
+
+            text-align: left;
+        }
+
+        .accordion{
+
+            margin-top: 1.5rem;
+        }
+
+        .accordion:hover{
+        
+            font-weight: bold;
+            color: #F47B56;
+            cursor: pointer;
+        }
+
+    }
 
 
 }
-
